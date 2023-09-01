@@ -275,5 +275,3 @@ Debug.DrawLine(Vector3.zero, new Vector3(10, 10, 10), Color.red);
     ```csharp
     float step = speed * Time.deltaTime;
     ```
-
-Semoga ini membantu memahami variabel dan kata kunci yang sering digunakan dalam konteks Lerp! Ada lagi yang ingin ditanyakan? 😊
