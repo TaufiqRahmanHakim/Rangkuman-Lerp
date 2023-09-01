@@ -22,6 +22,7 @@ Rangkuman Lerp di unity
 15. [LateUpdate](#lateupdate)
 16. [Transform Lerp](#transform-lerp)
 17. [Debugging Tools](#debugging-tools)
+18. [Variables](#variables)
 
 ---
 
@@ -213,4 +214,66 @@ Debug.DrawLine(Vector3.zero, new Vector3(10, 10, 10), Color.red);
 
 ---
 
-Semoga ini membantu dan mudah diikuti! 😊
+### Variables
+
+1. **t**: Faktor interpolasi, biasanya antara 0 dan 1. Jika t = 0, hasilnya adalah titik awal. Jika t = 1, hasilnya adalah titik akhir.
+    ```csharp
+    float t = 0.5f;
+    ```
+
+2. **startValue**: Nilai awal yang ingin di-interpolasi.
+    ```csharp
+    float startValue = 0f;
+    ```
+
+3. **endValue**: Nilai akhir yang ingin di-interpolasi.
+    ```csharp
+    float endValue = 10f;
+    ```
+
+4. **result**: Hasil dari operasi `Lerp`.
+    ```csharp
+    float result = Mathf.Lerp(startValue, endValue, t);
+    ```
+
+5. **speed**: Kecepatan interpolasi, biasanya digunakan bersama dengan `Time.deltaTime`.
+    ```csharp
+    float speed = 2f;
+    ```
+
+6. **deltaTime**: Selisih waktu antara frame, digunakan untuk interpolasi yang smooth.
+    ```csharp
+    float deltaTime = Time.deltaTime;
+    ```
+
+7. **clamp**: Pembatasan nilai `t`, biasanya menggunakan `Mathf.Clamp` atau `Mathf.Clamp01`.
+    ```csharp
+    float clamp = Mathf.Clamp01(t);
+    ```
+
+8. **lerpTime**: Waktu yang diperlukan untuk menyelesaikan proses interpolasi dari awal hingga akhir.
+    ```csharp
+    float lerpTime = 3.0f;
+    ```
+
+9. **currentTime**: Waktu saat ini dalam proses interpolasi, sering digunakan di Coroutines.
+    ```csharp
+    float currentTime = 0f;
+    ```
+
+10. **easingFunction**: Fungsi penyesuaian `t` untuk efek lebih natural.
+    ```csharp
+    float EaseInQuad(float t) { return t * t; }
+    ```
+
+11. **direction**: Arah vektor, sering digunakan dalam interpolasi posisi.
+    ```csharp
+    Vector3 direction = targetPosition - startPosition;
+    ```
+
+12. **step**: Ukuran langkah per frame, biasanya `speed * Time.deltaTime`.
+    ```csharp
+    float step = speed * Time.deltaTime;
+    ```
+
+Semoga ini membantu memahami variabel dan kata kunci yang sering digunakan dalam konteks Lerp! Ada lagi yang ingin ditanyakan? 😊
